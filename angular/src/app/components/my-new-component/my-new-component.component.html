@@ -1,0 +1,14 @@
+
+    <table appNewDirective border="1">
+        <tr>
+            <td>sl.no</td><td>name</td><td>mobile</td>
+        </tr>
+        @for (emp of emplyee; track emp.id) {
+    <tr>
+        <td>{{emp.id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.mobile}}</td>
+</tr>
+    
+}
+</table>

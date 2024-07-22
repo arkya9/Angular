@@ -1,0 +1,56 @@
+<h1>user-profile works!</h1>
+<ul>
+
+    <li>name={{name}}</li>
+    <li>mobile={{mobile}}</li>
+</ul>
+<button [disabled]="buttonStatus">click here</button> <!--click here</button> this will check button status-->
+<input type="text" [value]="textValue" (change)="onChenge()"><br>
+<!--when you want to use event have to use () to use event [] to use popartics-->
+
+<input type="radio" id="html" name="fav_language" value="HTML" (change)="getLanguge($event)">
+<label for="html">HTML</label><br>
+<input type="radio" id="css" name="fav_language" value="CSS" (change)="getLanguge($event)">
+<label for="css">CSS</label><br>
+<input type="radio" id="javascript" name="fav_language" value="JavaScript" (change)="getLanguge($event)">
+<label for="javascript">JavaScript</label>
+<br>
+<br>
+ <h1>welcome {{name1}} </h1>
+
+ <!-- <input type="text" (keyup)="getUserName($event)"><br> -->
+ <input type="text" [(ngModel)]="name1">
+<!-- {{let counter=0}} -->
+<br><br>
+<table border="1">
+  <tr><th>name</th><th>address</th><th>salary</th></tr>
+ @for(data of user;track data.name){
+  <tr>
+
+    <td>{{data.name}}</td><td>{{data.address}}</td><td>{{data.salary}}</td>
+  </tr>
+
+ }
+</table>
+<hr>
+<table border="1"appBgchange>
+  <tr><td>slno</td><th>name</th><th>address</th><th>salary</th></tr>
+
+  <tr *ngFor="let data of user; let counter = index">
+
+    <ng-container *ngIf="data.salary ==='pending';else elseBlock">
+      <td>{{ counter + 1 }}</td><td>{{data.name}}</td><td>{{data.address}}</td><td>{{data.salary}}</td>
+    </ng-container>
+    <ng-template  #elseBlock>
+      <td>{{ counter + 1 }}</td><td>{{data.name}}</td><td>{{data.address}}</td><td>{{data.salary}}</td>
+    </ng-template >
+
+  </tr>
+
+
+
+
+
+
+
+
