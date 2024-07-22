@@ -1,0 +1,14 @@
+<table #mytable border="1">
+  <thead>
+    <tr>
+      <td>task</td>
+      <td>action</td>
+    </tr>
+  </thead>
+  @for(item of taskarr;track item.id){
+  <tr>
+    <td>{{ item.task }}</td>
+    <td><button (click)="deleteTask(item.id)">Delete Task</button></td>
+  </tr>
+  }
+</table>
