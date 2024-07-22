@@ -1,3 +1,4 @@
+import { STRING_TYPE } from '@angular/compiler';
 import { JokeServiceService } from './../../../../src/services/joke-service.service';
 
 import { Component } from '@angular/core';
@@ -11,9 +12,28 @@ import { Component } from '@angular/core';
 })
 export class JokecomponentComponent {
   constructor(public JokeService: JokeServiceService) {}
+ 
+  // catarr : {  string , string}[] = []
+   
+  mp=[]
   ngOnInit() {
-    this.JokeService.getJokecategory().subscribe((data) => {
-      console.log(data);
+    
+    let catarr : {[key: string]:string};
+    this.JokeService.getJokecategory().subscribe((data:any) => {
+      
+      for( let key in data){
+      
+        catarr = {[data[key]] : data[key]};
+
+        this.mp = new Map<any, any([
+          [data[key], data[key]]
+          ]);
+          console.log(this.mp);
+      //  this.catarr.push({key:data[key],value:data[key]});
+        
+      }
+     
+     
     });
   }
 }
