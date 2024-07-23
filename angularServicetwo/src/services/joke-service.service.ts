@@ -12,4 +12,9 @@ export class JokeServiceService {
   getJokecategory() {
     return this.http.get('https://api.chucknorris.io/jokes/categories');
   }
+  getJoke(data: string) {
+    return this.http.get(
+      `https://api.chucknorris.io/jokes/random?category=${data}`
+    );
+  }
 }
