@@ -1,0 +1,19 @@
+.joke-category-selector {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+label {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-right: 10px;
+}
+select {
+  font-size: 1em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+option {
+  font-size: 1em;
+  padding: 5px;
+}

@@ -1,1 +1,6 @@
-<p>j</p>
+<div class="joke-category-selector">
+  <label for="cat">JOKE CATEGORY</label>
+  <select name="cat" id="cat">
+    <option *ngFor="let item of cat" [value]="item">{{ item }}</option>
+  </select>
+</div>

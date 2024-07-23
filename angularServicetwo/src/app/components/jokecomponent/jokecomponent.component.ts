@@ -2,38 +2,23 @@ import { STRING_TYPE } from '@angular/compiler';
 import { JokeServiceService } from './../../../../src/services/joke-service.service';
 
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-jokecomponent',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, CommonModule],
   templateUrl: './jokecomponent.component.html',
   styleUrl: './jokecomponent.component.css',
 })
 export class JokecomponentComponent {
   constructor(public JokeService: JokeServiceService) {}
- 
-  // catarr : {  string , string}[] = []
-   
-  mp=[]
-  ngOnInit() {
-    
-    let catarr : {[key: string]:string};
-    this.JokeService.getJokecategory().subscribe((data:any) => {
-      
-      for( let key in data){
-      
-        catarr = {[data[key]] : data[key]};
 
-        this.mp = new Map<any, any([
-          [data[key], data[key]]
-          ]);
-          console.log(this.mp);
-      //  this.catarr.push({key:data[key],value:data[key]});
-        
-      }
-     
-     
+  cat = '';
+  ngOnInit() {
+    this.JokeService.getJokecategory().subscribe((data: any) => {
+      this.cat = data;
     });
   }
 }
